@@ -156,6 +156,10 @@ if (isset($_POST['btnSave']))
         $svxconfig['ReflectorLogic']['FMNET'] = $_POST['inFmNetwork'];
         $svxconfig['ReflectorLogic']['CALLSIGN'] = $_POST['inCallsign'];
 	$svxconfig['ReflectorLogic']['TG_URI'] = $_POST['inReflectorTgUri'];
+        $svxconfig['ReflectorLogic']['HOSTS'] = $_POST['inHostsServer'];
+        $svxconfig['ReflectorLogic']['HOST_PORT'] = $_POST['inHostPort'];
+        $svxconfig['ReflectorLogic']['DNS_DOMAIN'] = $_POST['inDnsDomain'];
+                
 
         if ($isSimplex){
 	$svxconfig['SimplexLogic']['DEFAULT_LANG'] = $_POST['inSimplexDefaultLang'];
@@ -253,6 +257,10 @@ if (isset($_POST['btnSave']))
 	$inPassword =$svxconfig['ReflectorLogic']['AUTH_KEY'];
 	$inFmNetwork =$svxconfig['ReflectorLogic']['FMNET'];
 	$inReflectorTgUri = $svxconfig['ReflectorLogic']['TG_URI'];
+        $inHostPort =$svxconfig['ReflectorLogic']['HOST_PORT'];
+        $inHostsServer =$svxconfig['ReflectorLogic']['HOSTS'];
+        $inDnsDomain =$svxconfig['ReflectorLogic']['DNS_DOMAIN'];
+               
 
         if ($isSimplex){ 
 	$inSimplexCallsign = $svxconfig['SimplexLogic']['CALLSIGN'];
@@ -387,12 +395,17 @@ $conns = null;
         <td style="border: none;"><input type="text" name="inMonitorTgs" style="width:98%" value="<?php echo $inMonitorTgs;?>">
         </td></tr>
         <tr style="border: none;"> 
-        <td style="border: none;">Reflector Server</td>
-        <td style="border: none;"><input type="text" name="inReflectorServer" style="width:98%" value="<?php echo $inReflectorServer;?>">
+        <td style="border: none;">Refl Dns Domain</td>
+        <td style="border: none;"><input type="text" name="inDnsDomain" style="width:98%" value="<?php echo $inDnsDomain;?>">
+        </td></tr>
+        </td></tr>
+        <tr style="border: none;"> 
+        <td style="border: none;">Reflector Servers</td>
+        <td style="border: none;"><input type="text" name="inHostsServer" style="width:98%" value="<?php echo $inHostsServer;?>">
         </td></tr>
         <tr style="border: none;"> 
         <td style="border: none;">Reflector Port</td>
-        <td style="border: none;"><input type="text" name="inReflectorPort" style="width:98%" value="<?php echo $inReflectorPort;?>">
+        <td style="border: none;"><input type="text" name="inHostPort" style="width:98%" value="<?php echo $inHostPort;?>">
         </td></tr>
         <tr style="border: none;"> 
         <td style="border: none;">Reflector Api</td>
@@ -401,6 +414,14 @@ $conns = null;
         <tr style="border: none;"> 
         <td style="border: none;">Reflector TgUri</td>
         <td style="border: none;"><input type="text" name="inReflectorTgUri" style="width:98%" value="<?php echo $inReflectorTgUri;?>">
+        </td></tr>
+        <tr style="border: none;"> 
+        <td style="border: none;"><s>Reflector Server</s></td>
+        <td style="border: none;"><input type="text" name="inReflectorServer" style="width:98%" value="<?php echo $inReflectorServer;?>">
+        </td></tr>
+        <tr style="border: none;"> 
+        <td style="border: none;"><s>Reflector Port</s></td>
+        <td style="border: none;"><input type="text" name="inReflectorPort" style="width:98%" value="<?php echo $inReflectorPort;?>">
         </td></tr>
 </table>
 
